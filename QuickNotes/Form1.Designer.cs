@@ -47,7 +47,6 @@
             this.CancelButton = new System.Windows.Forms.Button();
             this.ClearConfirmButton = new System.Windows.Forms.Button();
             this.OptionGroup = new System.Windows.Forms.GroupBox();
-            this.TestButton = new System.Windows.Forms.Button();
             this.ExportButton = new System.Windows.Forms.Button();
             this.ImportButton = new System.Windows.Forms.Button();
             this.ClearButton = new System.Windows.Forms.Button();
@@ -119,7 +118,7 @@
             this.Doc.Location = new System.Drawing.Point(12, 48);
             this.Doc.Name = "Doc";
             this.Doc.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.Doc.Size = new System.Drawing.Size(340, 190);
+            this.Doc.Size = new System.Drawing.Size(340, 177);
             this.Doc.TabIndex = 25;
             this.Doc.Text = "";
             // 
@@ -313,7 +312,6 @@
             // 
             // OptionGroup
             // 
-            this.OptionGroup.Controls.Add(this.TestButton);
             this.OptionGroup.Controls.Add(this.ExportButton);
             this.OptionGroup.Controls.Add(this.ImportButton);
             this.OptionGroup.Controls.Add(this.ClearButton);
@@ -322,25 +320,11 @@
             this.OptionGroup.Controls.Add(this.DeleteButton);
             this.OptionGroup.Location = new System.Drawing.Point(266, 179);
             this.OptionGroup.Name = "OptionGroup";
-            this.OptionGroup.Size = new System.Drawing.Size(200, 171);
+            this.OptionGroup.Size = new System.Drawing.Size(200, 134);
             this.OptionGroup.TabIndex = 29;
             this.OptionGroup.TabStop = false;
             this.OptionGroup.Text = "groupBox1";
             this.OptionGroup.Visible = false;
-            // 
-            // TestButton
-            // 
-            this.TestButton.BackColor = System.Drawing.Color.Black;
-            this.TestButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TestButton.ForeColor = System.Drawing.Color.White;
-            this.TestButton.Location = new System.Drawing.Point(16, 129);
-            this.TestButton.Name = "TestButton";
-            this.TestButton.Size = new System.Drawing.Size(75, 33);
-            this.TestButton.TabIndex = 17;
-            this.TestButton.TabStop = false;
-            this.TestButton.Text = "Test";
-            this.TestButton.UseVisualStyleBackColor = false;
-            this.TestButton.Click += new System.EventHandler(this.TestButton_Click);
             // 
             // ExportButton
             // 
@@ -522,7 +506,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(364, 250);
+            this.ClientSize = new System.Drawing.Size(364, 237);
             this.Controls.Add(this.ExportGroup);
             this.Controls.Add(this.ImportGroup);
             this.Controls.Add(this.ClearConfirmGroup);
@@ -586,7 +570,6 @@
         private System.Windows.Forms.GroupBox LoadGroup;
         private System.Windows.Forms.Button DoneButton;
         private System.Windows.Forms.ComboBox LoadMenu;
-        private System.Windows.Forms.Button TestButton;
     }
 }
 

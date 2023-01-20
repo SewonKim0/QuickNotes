@@ -1,19 +1,21 @@
-setContentView(int layoutResID): This method sets the layout file for the activity, which defines the UI elements that will be displayed on the screen. The layout file is specified by its resource ID, which is typically stored in the R class.
+HTML: <script defer src="jsFile"></script>
+		console.log()
+		process.stdout.write
+	Prims: string number boolean null undef(unset)
+		Wrappers
+		!! (to bool), ==(typecast), ===
+			arr.join(''), str.split(delimit)
+	object: dict, obj = {key: val,}
+			object[i] = ..., delete object[i]
+		var(local to func, hoist)
+		let(local to block), const
+	function:
+		const funcName = (args) => return
+		Anonymous: function Name* () {}
+		Function as args
+		Closure: function inside function
+			local var persistence?
+		funcName.call(parentObj)
+https://developer.mozilla.org/en-US/docs/Web/JavaScript
 
-findViewById(int id): This method is used to get a reference to a specific UI element in the layout. You pass in the ID of the element as an argument, and the method returns a reference to the corresponding view object.
 
-setText(CharSequence text): This method sets the text of a text view (such as a TextView or EditText) to the specified string.
-
- 
-
-setOnClickListener(View.OnClickListener listener): This method sets an on-click listener for a button or other clickable view, which will be triggered when the user taps the view.
-
-setImageResource(int resId): This method sets the image of an ImageView to the image resource specified by the resource ID.
-
-setVisibility(int visibility): This method is used to set the visibility of a view, it can be one of the following constants: View.VISIBLE, View.INVISIBLE, View.GONE.
-
-invalidate(): This method is used to force the UI element to redraw itself and refresh the screen.
-
-setBackground(Drawable background): This method sets the background of a view to the specified drawable.
-
-setBackgroundColor(int color): This method sets the background color of a view to the specified color.
