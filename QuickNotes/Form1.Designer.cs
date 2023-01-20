@@ -47,6 +47,7 @@
             this.CancelButton = new System.Windows.Forms.Button();
             this.ClearConfirmButton = new System.Windows.Forms.Button();
             this.OptionGroup = new System.Windows.Forms.GroupBox();
+            this.TestButton = new System.Windows.Forms.Button();
             this.ExportButton = new System.Windows.Forms.Button();
             this.ImportButton = new System.Windows.Forms.Button();
             this.ClearButton = new System.Windows.Forms.Button();
@@ -118,7 +119,7 @@
             this.Doc.Location = new System.Drawing.Point(12, 48);
             this.Doc.Name = "Doc";
             this.Doc.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.Doc.Size = new System.Drawing.Size(340, 175);
+            this.Doc.Size = new System.Drawing.Size(340, 190);
             this.Doc.TabIndex = 25;
             this.Doc.Text = "";
             // 
@@ -312,6 +313,7 @@
             // 
             // OptionGroup
             // 
+            this.OptionGroup.Controls.Add(this.TestButton);
             this.OptionGroup.Controls.Add(this.ExportButton);
             this.OptionGroup.Controls.Add(this.ImportButton);
             this.OptionGroup.Controls.Add(this.ClearButton);
@@ -320,18 +322,32 @@
             this.OptionGroup.Controls.Add(this.DeleteButton);
             this.OptionGroup.Location = new System.Drawing.Point(266, 179);
             this.OptionGroup.Name = "OptionGroup";
-            this.OptionGroup.Size = new System.Drawing.Size(200, 145);
+            this.OptionGroup.Size = new System.Drawing.Size(200, 171);
             this.OptionGroup.TabIndex = 29;
             this.OptionGroup.TabStop = false;
             this.OptionGroup.Text = "groupBox1";
             this.OptionGroup.Visible = false;
+            // 
+            // TestButton
+            // 
+            this.TestButton.BackColor = System.Drawing.Color.Black;
+            this.TestButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TestButton.ForeColor = System.Drawing.Color.White;
+            this.TestButton.Location = new System.Drawing.Point(16, 129);
+            this.TestButton.Name = "TestButton";
+            this.TestButton.Size = new System.Drawing.Size(75, 33);
+            this.TestButton.TabIndex = 17;
+            this.TestButton.TabStop = false;
+            this.TestButton.Text = "Test";
+            this.TestButton.UseVisualStyleBackColor = false;
+            this.TestButton.Click += new System.EventHandler(this.TestButton_Click);
             // 
             // ExportButton
             // 
             this.ExportButton.BackColor = System.Drawing.Color.Black;
             this.ExportButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ExportButton.ForeColor = System.Drawing.Color.White;
-            this.ExportButton.Location = new System.Drawing.Point(109, 100);
+            this.ExportButton.Location = new System.Drawing.Point(109, 90);
             this.ExportButton.Name = "ExportButton";
             this.ExportButton.Size = new System.Drawing.Size(75, 33);
             this.ExportButton.TabIndex = 16;
@@ -345,7 +361,7 @@
             this.ImportButton.BackColor = System.Drawing.Color.Black;
             this.ImportButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ImportButton.ForeColor = System.Drawing.Color.White;
-            this.ImportButton.Location = new System.Drawing.Point(16, 100);
+            this.ImportButton.Location = new System.Drawing.Point(16, 90);
             this.ImportButton.Name = "ImportButton";
             this.ImportButton.Size = new System.Drawing.Size(75, 33);
             this.ImportButton.TabIndex = 14;
@@ -359,7 +375,7 @@
             this.ClearButton.BackColor = System.Drawing.Color.Black;
             this.ClearButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ClearButton.ForeColor = System.Drawing.Color.White;
-            this.ClearButton.Location = new System.Drawing.Point(109, 58);
+            this.ClearButton.Location = new System.Drawing.Point(109, 51);
             this.ClearButton.Name = "ClearButton";
             this.ClearButton.Size = new System.Drawing.Size(75, 33);
             this.ClearButton.TabIndex = 13;
@@ -373,7 +389,7 @@
             this.SaveButton.BackColor = System.Drawing.Color.Black;
             this.SaveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SaveButton.ForeColor = System.Drawing.Color.White;
-            this.SaveButton.Location = new System.Drawing.Point(16, 16);
+            this.SaveButton.Location = new System.Drawing.Point(16, 12);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(75, 33);
             this.SaveButton.TabIndex = 2;
@@ -387,7 +403,7 @@
             this.LoadButton.BackColor = System.Drawing.Color.Black;
             this.LoadButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LoadButton.ForeColor = System.Drawing.Color.White;
-            this.LoadButton.Location = new System.Drawing.Point(109, 16);
+            this.LoadButton.Location = new System.Drawing.Point(109, 12);
             this.LoadButton.Name = "LoadButton";
             this.LoadButton.Size = new System.Drawing.Size(75, 33);
             this.LoadButton.TabIndex = 3;
@@ -401,7 +417,7 @@
             this.DeleteButton.BackColor = System.Drawing.Color.Black;
             this.DeleteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DeleteButton.ForeColor = System.Drawing.Color.White;
-            this.DeleteButton.Location = new System.Drawing.Point(16, 58);
+            this.DeleteButton.Location = new System.Drawing.Point(16, 51);
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.Size = new System.Drawing.Size(75, 33);
             this.DeleteButton.TabIndex = 12;
@@ -506,7 +522,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(364, 235);
+            this.ClientSize = new System.Drawing.Size(364, 250);
             this.Controls.Add(this.ExportGroup);
             this.Controls.Add(this.ImportGroup);
             this.Controls.Add(this.ClearConfirmGroup);
@@ -570,6 +586,7 @@
         private System.Windows.Forms.GroupBox LoadGroup;
         private System.Windows.Forms.Button DoneButton;
         private System.Windows.Forms.ComboBox LoadMenu;
+        private System.Windows.Forms.Button TestButton;
     }
 }
 

@@ -1,0 +1,6 @@
+setContentView(int layoutResID): This method sets the layout file for the activity, which defines the UI elements that will be displayed on the screen. The layout file is specified by its resource ID, which is typically stored in the R class.
+
+findViewById(int id): This method is used to get a reference to a specific UI element in the layout. You pass in the ID of the element as an argument, and the method returns a reference to the corresponding view object.
+
+setText(CharSequence text): This method sets the text of a text view (such as a TextView or EditText) to the specified string.
+

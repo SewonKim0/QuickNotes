@@ -1,0 +1,19 @@
+dir: Lists the files and folders in the current directory.
+
+cd: Changes the current directory. For example, cd Documents would change the current directory to the Documents folder.
+
+copy: Copies one or more files to another location. For example, copy file.txt newfile.txt would copy the file.txt to newfile.txt.
+
+xcopy: Copies entire folders and subfolders. For example, xcopy C:\folder1 C:\folder2 would copy all the files and folders in folder1 to folder2.
+
+del: Deletes one or more files. For example, del file.txt would delete the file.txt.
+
+rmdir: Deletes an empty folder. For example, rmdir folder would delete the folder.
+
+md: Creates a new folder. For example, md newfolder would create a new folder named newfolder.
+
+type: Displays the contents of a text file. For example, type file.txt would display the contents of file.txt.
+
+find: Searches for a specific text string in a file. For example, find "text" file.txt would search for the text "text" in file.txt.
+
+exit: Closes the Command Prompt window.
