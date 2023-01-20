@@ -1,0 +1,24 @@
+	layers fully connected by weights
+input (pixels), hidden layer, output layer
+	neurons: numbers
+		Bias neuron (weights) 0
+		represents shift of function
+	weights: matrix[random] (nextLen, currLen)
+(image->ans) MNIST basic machine learning
+	labels[] all 0, 1 for correct
+
+for epoch:
+	for images:
+
+inp -> hidden: mult by weight, sum them and bias
+Activation Function(complexity), sigmoid function
+	range(0, 1) for hidden layer
+Repeat for hidden->output
+
+compare output and expected label
+	error function: find diff
+	classification check, increment correctCount
+
+Backpropagation: diff -> matrix mult to get weight adjust
+	-learnRate * matrix for weight update
+	-learnRate * diff for bias adjust

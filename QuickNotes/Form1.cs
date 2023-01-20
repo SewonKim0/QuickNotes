@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
@@ -50,12 +51,16 @@ namespace Notes
         {
             if (!Directory.GetFiles("./../..").Contains("./../..\\LocationData.txt"))
             {
-                File.WriteAllText("./../..\\LocationData.txt", "0 0");
+                File.WriteAllText("./../..\\LocationData.txt", "0 0\n12");
             }
 
-            String[] locationData = File.ReadAllText("./../..\\LocationData.txt").Split(' ');
+            String[] fileData = File.ReadAllLines("./../..\\LocationData.txt");
+
+            String[] locationData = fileData[0].Split(' ');
             this.Location = new Point(int.Parse(locationData[0]), int.Parse(locationData[1]));
-            this.Deactivate += SaveLocation;
+            TextSize.Value = int.Parse(fileData[1]);
+
+            Doc.Font = new Font(Doc.Font.FontFamily, (int)TextSize.Value, FontStyle.Bold);
 
             if (!Directory.Exists("./../../Saves"))
             {
@@ -68,12 +73,53 @@ namespace Notes
             Doc.SelectionBackColor = Color.DarkSlateBlue;
             Doc.SelectionColor = Color.White;
 
-            TextSize.Value = (int)Doc.Font.Size;
+            this.FormClosing += SaveLocation;
+            this.FormClosing += ClosingSave;
+        }
+
+        private void ClosingSave(object sender, EventArgs e)
+        {
+            if (NameBox.Text == "" && Doc.Text == "")
+            {
+                return;
+            }
+            string filePath = "./../../Saves\\" + NameBox.Text + ".txt";
+            if (Directory.GetFiles("./../../Saves").Contains(filePath) && Doc.Text.Equals(File.ReadAllText(filePath)))
+            {
+                return;
+            }
+
+            DialogResult result = MessageBox.Show("Save File?", "", MessageBoxButtons.YesNo);
+            if (result == DialogResult.No)
+            {
+                return;
+            }
+
+            if (NameBox.Text == "")
+            {
+                string[] files = Directory.GetFiles("./../../Saves");
+                HashSet<string> names = new HashSet<string>();
+                foreach (string file in files)
+                {
+                    names.Add(file.Substring(file.LastIndexOf("\\") + 1, file.Length - file.LastIndexOf("\\") - 5));
+                }
+
+                int x = 0;
+                while (names.Contains("Untitled" + x))
+                {
+                    x++;
+                }
+
+                NameBox.Text = "Untitled" + x;
+            }
+
+            File.WriteAllText("./../../Saves/" + NameBox.Text + ".txt", Doc.Text);
+            LoadMenu.Items.Add(NameBox.Text);
         }
 
         private void SaveLocation(object sender, EventArgs e)
         {
-            File.WriteAllText("./../..\\LocationData.txt", this.Location.X + " " + this.Location.Y);
+            File.WriteAllText("./../..\\LocationData.txt", this.Location.X + " " + this.Location.Y + "\n" + TextSize.Value);
         }
 
         private void GoLink(object sender, LinkClickedEventArgs e)
@@ -130,7 +176,7 @@ namespace Notes
                     Doc.SelectionBackColor = Color.Black;
                     Doc.SelectionColor = Color.White;
                 }
-                if (line.Substring(1, 1).Equals("\t"))
+                if (line.Length > 1 && line.Substring(1, 1).Equals("\t"))
                 {
                     Doc.SelectionColor = Color.DarkGray;
                 }
@@ -279,6 +325,10 @@ namespace Notes
 
         private void TextSize_ValueChanged(object sender, EventArgs e)
         {
+            if (TextSize.Value < 1)
+            {
+                return;
+            }
             Doc.Font = new Font(Doc.Font.FontFamily, (int)TextSize.Value, FontStyle.Bold);
         }
 

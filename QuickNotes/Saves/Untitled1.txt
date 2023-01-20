@@ -1,0 +1,21 @@
+HTML: <script defer src="jsFile"></script>
+		console.log()
+		process.stdout.write
+	Prims: string number boolean null undef(unset)
+		Wrappers
+		!! (to bool), ==(typecast), ===
+			arr.join(''), str.split(delimit)
+	object: dict, obj = {key: val,}
+			object[i] = ..., delete object[i]
+		var(local to func, hoist)
+		let(local to block), const
+	function:
+		const funcName = (args) => return
+		Anonymous: function Name* () {}
+		Function as args
+		Closure: function inside function
+			local var persistence?
+		funcName.call(parentObj)
+https://developer.mozilla.org/en-US/docs/Web/JavaScript
+
+

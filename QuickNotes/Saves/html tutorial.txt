@@ -1,0 +1,71 @@
+FileName.html
+
+Header:
+<!DOCTYPE html> #declares it is HTML5 document
+
+Elements:
+<TagName AttributeName = “Value” ...> Content </TagName>
+style = “property:value;”
+
+<html> (lang) #root element, contains all
+<head> #contains meta info about page
+<title> #title for tab
+<link> (rel, type, href) #title image for tab
+
+<body> #container for all visible contents
+<h1> (style) #heading (h1 - h6)
+<p> (style, title) #paragraph
+<pre> #formatted paragraph
+
+<a href = “url”> Text/Image </a> #link
+<img src = “file” alt = “errorText”> #image
+
+<br> #line break, <hr> #line break with horizontal line
+
+Empty Elements: Elements without content or ending tag
+
+
+Attributes:
+style = “property:value;” #color, font, size, etc.
+title = “text” #displays when mouse hover
+
+Properties: (CSS)
+background-color #background color
+color #text color, font-family #text font, font-size #text size, text-align #horizontal text alignment
+
+Color: (Property)
+color:ColorName; #access by name, rgb, hex, etc. (works for all color properties)
+rgb(Red, Green, Blue), #FFFFFF
+
+Images:
+<img src = “file” alt = “errorText” style = “width:100px;height:100px;”> #loads src from web server, can put image inside link element
+
+Tables:
+<table>
+<tr> #row
+	<th> Headers </th> #header cell
+	<td> Contents </td> #cell
+</tr>
+</table>
+
+Lists:
+<ol> #list
+	<li> Element </li>
+</ol>
+<dl>
+	<dt> Title </dt>
+	<dd> Element </dd>
+</dl>
+
+Class: (Attribute)
+Used to store and give properties
+<style> #define class
+.ClassName {
+	Attributes
+}
+</style>
+<p class = “ClassName”> Text </p>
+
+Inline Elements:
+Only takes up the space necessary, unlike block-level elements.
+<span> Text </span>
